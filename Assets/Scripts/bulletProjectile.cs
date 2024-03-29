@@ -7,8 +7,9 @@ public class bulletProjectile : MonoBehaviour
     Vector3 direction;
     Vector3 PlayerPosition;
     Charachter centerCharacter;
+    GunWeapon gunWeapon;
     [SerializeField] float speed;
-    [SerializeField] int damage;
+    public int damage = 5;
     [SerializeField] float Range;
     bool hitDetected = false;
     //List<Enemy> NearEnemies = new List<Enemy>();
@@ -20,13 +21,13 @@ public class bulletProjectile : MonoBehaviour
     public void SetDamage(int settetDamage) {
         damage = settetDamage;
     }
-    public void SetDirection(Vector3 center) {
-        PlayerPosition = center;
-        var NearEnemies = FindObjectsOfType<Enemy>();
-        if (NearEnemies == null) {
+    public void SetDirection() { //Vector3 center
+        //PlayerPosition = center;
+        if (FindObjectsOfType<Enemy>() == null) {
             direction = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
         } else {
-        closetsEnemy = FindClosestEnemy(center, NearEnemies);
+        var NearEnemies = FindObjectsOfType<Enemy>();
+        closetsEnemy = FindClosestEnemy(this.transform.position, NearEnemies);
         
         direction = closetsEnemy.transform.position;
         }
@@ -73,7 +74,7 @@ public class bulletProjectile : MonoBehaviour
    return closestEnemy;
 }
     void Update() {
-        Vector2 BulletDirection = direction - PlayerPosition;
+        Vector2 BulletDirection = direction - this.transform.position;
         transform.right = direction;
         GetComponent<Rigidbody2D>().velocity = BulletDirection.normalized * speed;
         //transform.position += direction.normalized * speed * Time.deltaTime;

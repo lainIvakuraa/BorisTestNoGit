@@ -2,33 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GunWeapon : MonoBehaviour
+public class GunWeapon : WeaponBase
 {
     
     // Start is called before the first frame update
-   [SerializeField] float TimeToAttack;
-   float Timer;
-   [SerializeField] Charachter playerCharachter;
+   //[SerializeField] float TimeToAttack;
+   //float Timer;
+    
    //PlayerMove playerMove;
     [SerializeField] GameObject bulletPrefab;
 
     /*private void Awake() {
-        playerMove = GetComponentInParent<PlayerMove>();
+        Charachter playerCharachter = FindObjectOfType<Charachter>();
     }*/
 
-    private void Update() {
+    /*private void Update() {
         if (Timer < TimeToAttack) {
             Timer += Time.deltaTime;
             return;
         }
         Timer = 0;
         SpawnBullet();
-    }
-    private void SpawnBullet() {
+    }*/
+    /*private void SpawnBullet() {
         GameObject shotBullet = Instantiate(bulletPrefab);
         shotBullet.transform.position = transform.position;
         shotBullet.GetComponent<bulletProjectile>().SetDirection(playerCharachter.transform.position);
         Debug.Log(transform.position);
+    }*/
+    public override void Attack() {
+        GameObject shotBullet = Instantiate(bulletPrefab);
+        shotBullet.transform.position = transform.position;
+        bulletProjectile bulletProjectileCurrent = shotBullet.GetComponent<bulletProjectile>();
+        bulletProjectileCurrent.SetDirection(); //FindObjectOfType<Charachter>().transform.position
+        bulletProjectileCurrent.damage = weaponStats.damage;
     }
     /*
     [SerializeField] float shootingDistance = 7f;

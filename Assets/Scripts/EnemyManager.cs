@@ -10,7 +10,8 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] GameObject player;
 
     float timer;
-
+    
+    
     private void Update() {
         timer -= Time.deltaTime;
         if (timer < 0f) {

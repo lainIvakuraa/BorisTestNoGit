@@ -9,7 +9,11 @@ public class Charachter : MonoBehaviour
     public int armor = 0;
     [SerializeField] StatusBar HpBar;
     bool isDead = false;
-
+    void Start()
+    {
+        //Set the tag of this GameObject to Player
+        gameObject.tag = "Player";
+    }
     public void TakeDamage(int damage) {
         if (isDead == true) {return;}
         ApplyArmor(ref damage); //ApplyArmor изменяет весь damage внутри функции
