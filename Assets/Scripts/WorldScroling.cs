@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+
 
 public class WorldScroling : MonoBehaviour
 {
@@ -62,7 +64,8 @@ public class WorldScroling : MonoBehaviour
 
     private Vector3 CalculateTilePosition(int x, int y)
     {
-        return new Vector3(x * tileSize, y * tileSize, 0f);
+        // добавил значение к z, чтобы тайлы не перекрывали другие объекты
+        return new Vector3(x * tileSize, y * tileSize, 0.067f); 
     }
 
     private int CalculatePositionOnAxis(float currentValue, bool horizontal)
