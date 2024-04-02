@@ -6,7 +6,7 @@ public abstract class WeaponBase : MonoBehaviour
 {
     public WeaponData weaponData;
     public WeaponStats weaponStats;
-    public float TimeToAttack = 1f;
+    public float TimeToAttack = 0.5f;
     float timer;
     public void Update() {
         timer -= Time.deltaTime;
