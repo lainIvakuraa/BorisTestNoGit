@@ -8,6 +8,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D rgbd2d;
+    [SerializeField] private FixedJoystick joystick;
     [HideInInspector]
     public Vector3 movementVector;
     [HideInInspector]
@@ -32,7 +33,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementVector.x = Input.GetAxisRaw("Horizontal");
+        /*movementVector.x = Input.GetAxisRaw("Horizontal");
         movementVector.y = Input.GetAxisRaw("Vertical");
         if(movementVector.x !=0) {
             lastHorizontalVector = movementVector.x;
@@ -44,6 +45,7 @@ public class PlayerMove : MonoBehaviour
 
         movementVector *= speed;
 
-        rgbd2d.velocity = movementVector;
+        rgbd2d.velocity = movementVector;*/
+        rgbd2d.velocity = new Vector3(joystick.Horizontal * speed, joystick.Vertical * speed, rgbd2d.velocity.y);
     }
 }
