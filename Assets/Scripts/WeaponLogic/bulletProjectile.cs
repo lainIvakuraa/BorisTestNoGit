@@ -7,10 +7,13 @@ public class bulletProjectile : MonoBehaviour
     Vector3 direction; // направление движения
     [SerializeField] float speed; // скорость пули
     public int damage = 5; // урон пули
-    [SerializeField] float Range; // дальность пули
+     float Range = 6; // дальность пули
     bool hitDetected = false; // флаг попадания по противнику
     
     Enemy closetsEnemy; // переменная самого близкого врага
+
+    Vector3 bulletDirection;
+    Vector3 shotStart;
     
     public int GetDamage() { 
         return damage;
@@ -47,13 +50,14 @@ public class bulletProjectile : MonoBehaviour
    }
    return closestEnemy;
 }
+    private void Start() {
+        bulletDirection = direction - this.transform.position;
+        shotStart = this.transform.position;
+    }
     // движение пули каждый кадр
     void Update() {
-        Vector2 BulletDirection = direction - this.transform.position;
         transform.right = direction;
-        GetComponent<Rigidbody2D>().velocity = BulletDirection.normalized * speed;
-        //transform.position += direction.normalized * speed * Time.deltaTime;
-        //Debug.Log(direction.normalized);
+        GetComponent<Rigidbody2D>().velocity = bulletDirection.normalized * speed;
         if (Time.frameCount % 6 == 0) {
         Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.1f);
         foreach(Collider2D c in hit) {
@@ -63,6 +67,9 @@ public class bulletProjectile : MonoBehaviour
                 hitDetected = true;
                 break;
             }
+        }
+        if (Vector3.Distance(shotStart, transform.position) > Range) {
+            Destroy(gameObject);
         }
         if (hitDetected == true) {
         Destroy(gameObject);

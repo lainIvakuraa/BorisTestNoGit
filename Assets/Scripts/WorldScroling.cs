@@ -66,7 +66,7 @@ public class WorldScroling : MonoBehaviour
 
     private Vector3 CalculateTilePosition(int x, int y)
     {
-        return new Vector3(x * tileSize, y * tileSize, 0f);
+        return new Vector3(x * tileSize, y * tileSize, 0.067f);
     }
 
     private int CalculatePositionOnAxis(float currentValue, bool horizontal)
