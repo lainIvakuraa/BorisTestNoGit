@@ -8,7 +8,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     Rigidbody2D rgbd2d;
-    [SerializeField] private FixedJoystick joystick;
+    [SerializeField] private FloatingJoystick joystick;
     [HideInInspector]
     public Vector3 movementVector;
     [HideInInspector]

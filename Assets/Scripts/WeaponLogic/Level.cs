@@ -23,13 +23,14 @@ public class Level : MonoBehaviour
     }
     private void Start() {
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
-        experienceBar.SetLevelText(level);
+        experienceBar.SetScoreText(experience);
         AddExperience(1000);
     }
     public void AddExperience(int amount) {
         experience += amount;
         CheckLevelUp();
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+        experienceBar.SetScoreText(experience);
     }
     public void AddUpgradesIntoTheListOfAvalibleUpgrades(List<UpgradeData> upgradesToAdd) {
         this.upgrades.AddRange(upgradesToAdd);
@@ -67,7 +68,7 @@ public class Level : MonoBehaviour
         upgradePanel.OpenPanel(selectedUpgrades);
         experience -= TO_LEVEL_UP;
         level += 1;
-        experienceBar.SetLevelText(level);
+        //experienceBar.SetScoreText(experience);
     }
     public List<UpgradeData> GetUpgrades(int count) {
         List<UpgradeData> upgradeList = new List<UpgradeData>();

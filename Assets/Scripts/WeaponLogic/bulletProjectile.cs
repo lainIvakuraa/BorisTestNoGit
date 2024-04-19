@@ -22,11 +22,11 @@ public class bulletProjectile : MonoBehaviour
         damage = settetDamage;
     }
     public void SetDirection() { //выбор цели для пули
-        
-        if (FindObjectsOfType<Enemy>() == null) {
+        var NearEnemies = FindObjectsOfType<Enemy>();
+        if (NearEnemies == null) {
             direction = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
         } else {
-        var NearEnemies = FindObjectsOfType<Enemy>();
+        
         closetsEnemy = FindClosestEnemy(this.transform.position, NearEnemies);
         
         direction = closetsEnemy.transform.position;
@@ -58,7 +58,14 @@ public class bulletProjectile : MonoBehaviour
     void Update() {
         transform.right = direction;
         GetComponent<Rigidbody2D>().velocity = bulletDirection.normalized * speed;
-        if (Time.frameCount % 6 == 0) {
+        
+        if (Vector3.Distance(shotStart, transform.position) > Range) {
+            Destroy(gameObject);
+        }
+        
+    }
+    void FixedUpdate() {
+        if (Time.frameCount % 2 == 0) {
         Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.1f);
         foreach(Collider2D c in hit) {
             Enemy enemy = c.GetComponent<Enemy>();
@@ -68,12 +75,9 @@ public class bulletProjectile : MonoBehaviour
                 break;
             }
         }
-        if (Vector3.Distance(shotStart, transform.position) > Range) {
-            Destroy(gameObject);
-        }
         if (hitDetected == true) {
-        Destroy(gameObject);
-        }
+                Destroy(gameObject);
+            }
         }
     }
 }
