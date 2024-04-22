@@ -64458,13 +64458,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bce654c313386048972afeb971edec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerTransform: {fileID: 0}
   playerTilePosition: {x: 0, y: 0}
-  tileSize: 5
-  terrainTileHorizontalCount: 0
-  terrainTileVerticalCount: 0
-  fieldOfVisionHeight: 3
-  fieldOfVisionWidth: 3
+  tileSize: 4.48
+  terrainTileHorizontalCount: 3
+  terrainTileVerticalCount: 3
+  fieldOfVisionHeight: 4
+  fieldOfVisionWidth: 4
 --- !u!1 &8210143497215986647
 GameObject:
   m_ObjectHideFlags: 0

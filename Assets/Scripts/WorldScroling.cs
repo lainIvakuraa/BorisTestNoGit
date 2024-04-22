@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class WorldScroling : MonoBehaviour
 {
-    [SerializeField] Transform playerTransform;
+    Transform playerTransform;
     Vector2Int currentTilePosition = new Vector2Int(0,0);
     [SerializeField] Vector2Int playerTilePosition;
     Vector2Int onTileGridPlayerPosition;
@@ -20,10 +20,14 @@ public class WorldScroling : MonoBehaviour
     [SerializeField] int fieldOfVisionHeight = 3;
     [SerializeField] int fieldOfVisionWidth = 3;
 
-
+    
     private void Awake()
     {
         terrainTiles = new GameObject[terrainTileHorizontalCount,terrainTileVerticalCount];
+    }
+    private void Start() {
+        playerTransform = GameManager.instance.playerTransform;
+        UpdateTilesOnScreen();
     }
 
     private void Update()
@@ -64,8 +68,7 @@ public class WorldScroling : MonoBehaviour
 
     private Vector3 CalculateTilePosition(int x, int y)
     {
-        // добавил значение к z, чтобы тайлы не перекрывали другие объекты
-        return new Vector3(x * tileSize, y * tileSize, 0.067f); 
+        return new Vector3(x * tileSize, y * tileSize, 1.0f); 
     }
 
     private int CalculatePositionOnAxis(float currentValue, bool horizontal)

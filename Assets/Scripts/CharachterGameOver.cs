@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Скрипт конца игры
 public class CharachterGameOver : MonoBehaviour
 {
     public GameObject gameOverPanel;
