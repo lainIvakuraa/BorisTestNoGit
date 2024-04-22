@@ -11,8 +11,9 @@ public abstract class WeaponBase : MonoBehaviour
     public void Update() {
         timer -= Time.deltaTime;
         if (timer < 0f) {
-            Attack();
             timer = weaponStats.timeToAttack;
+            Attack();
+
         }
     }
 
