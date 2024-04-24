@@ -13,6 +13,9 @@ public class ExperienceBar : MonoBehaviour
         slider.maxValue = target;
         slider.value = current;
     }
+    public int GetExp() {
+        return total_experience;
+    }
     public void SetScoreText(int experience) {
         total_experience += experience;
         levelText.text = total_experience.ToString();
