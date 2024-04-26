@@ -1,3 +1,4 @@
-Base path: 'D:/Линуксоидам_салам/2022.3.25f1/Editor/Data', plugins path 'D:/Линуксоидам_салам/2022.3.25f1/Editor/Data/PlaybackEngines'
+Base path: 'D:/apps/Unity/2022.3.20f1/Editor/Data', plugins path 'D:/apps/Unity/2022.3.20f1/Editor/Data/PlaybackEngines'
 Cmd: initializeCompiler
 
+Cmd: shutdown
