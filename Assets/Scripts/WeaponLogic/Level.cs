@@ -9,6 +9,7 @@ public class Level : MonoBehaviour
     int level = 1;
     [SerializeField] ExperienceBar experienceBar;
     [SerializeField] UpgradePanelManager upgradePanel;
+    [SerializeField] HighScoreBar highScoreBar;
     [SerializeField] List<UpgradeData> upgrades;
     List<UpgradeData> selectedUpgrades;
     [SerializeField] List<UpgradeData> aquiredUpgrades;
@@ -23,6 +24,7 @@ public class Level : MonoBehaviour
     }
     private void Start() {
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+        highScoreBar.UpdateExperienceSlider(experience, PlayerPrefs.GetInt("HighScore", 0));
         experienceBar.SetScoreText(experience);
         AddExperience(1000);
     }
@@ -30,6 +32,7 @@ public class Level : MonoBehaviour
         experience += amount;
         CheckLevelUp();
         experienceBar.UpdateExperienceSlider(experience, TO_LEVEL_UP);
+        highScoreBar.UpdateExperienceSlider(experience, PlayerPrefs.GetInt("HighScore", 0));
         experienceBar.SetScoreText(experience);
     }
     public void AddUpgradesIntoTheListOfAvalibleUpgrades(List<UpgradeData> upgradesToAdd) {
