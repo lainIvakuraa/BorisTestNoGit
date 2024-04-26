@@ -187,6 +187,7 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
+<<<<<<< HEAD
   Time since last request: 10067.456635 seconds.
   path: Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
   artifactKey: Guid(2e498d1c8094910479dc3e1b768306a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
@@ -394,6 +395,26 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+=======
+  Time since last request: 234990.650760 seconds.
+  path: Assets/Prefab
+  artifactKey: Guid(67d93b0bac62ba441bb4dc50fb2bda3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefab using Guid(67d93b0bac62ba441bb4dc50fb2bda3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc6df0b934792bc96414b394800ce2e6') in 0.025452 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.326536 seconds.
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.525250 seconds.
+  path: Assets/Data/Armor.asset
+  artifactKey: Guid(4c34e978412837b4ba4110dec86c96b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Data/Armor.asset using Guid(4c34e978412837b4ba4110dec86c96b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aad8bf20ab24a4a331dcc79e2192f7ae') in 0.002023 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+>>>>>>> aa5e6a1677c1c4c95ca7c48569f62f012b9e1f48
 ========================================================================
 Received Import Request.
   Time since last request: 476.852943 seconds.
