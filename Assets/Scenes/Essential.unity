@@ -465,6 +465,7 @@ MonoBehaviour:
   highScoreBar: {fileID: 1065235810}
   upgrades:
   - {fileID: 11400000, guid: 3b377f93f4d4f30498de0006c9a19779, type: 2}
+  - {fileID: 11400000, guid: 68518bda30ee7fb469d2db694a48f2d8, type: 2}
   aquiredUpgrades: []
 --- !u!114 &283746357
 MonoBehaviour:
@@ -509,7 +510,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponObjectsContainer: {fileID: 1241394096}
-  startingWeapon: {fileID: 11400000, guid: 48b61c772bf7eb1499503c3cc797a106, type: 2}
+  startingWeapon: {fileID: 11400000, guid: b1e46fd686d945d4f907e47305f03cc5, type: 2}
 --- !u!1 &303992415
 GameObject:
   m_ObjectHideFlags: 0
