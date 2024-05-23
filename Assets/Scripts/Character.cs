@@ -9,6 +9,9 @@ public class Charachter : MonoBehaviour
     public int armor = 0;
     [SerializeField] StatusBar HpBar;
     bool isDead = false;
+    void Awake() {
+        HpBar.SetState(currentHP, maxHP);
+    }
     void Start()
     {
         //Set the tag of this GameObject to Player
