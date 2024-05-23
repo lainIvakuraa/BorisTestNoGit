@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEditor.Rendering;
 using UnityEngine;
 
@@ -47,5 +48,6 @@ public class PlayerMove : MonoBehaviour
 
         rgbd2d.velocity = movementVector;*/
         rgbd2d.velocity = new Vector3(joystick.Horizontal * speed, joystick.Vertical * speed, rgbd2d.velocity.y);
+        // UnityEngine.Debug.Log(rgbd2d.velocity);
     }
 }
