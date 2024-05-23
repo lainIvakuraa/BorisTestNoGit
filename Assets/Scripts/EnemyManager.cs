@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] GameObject Enemy;
+    [SerializeField] GameObject EnemyToSpawn;
     [SerializeField] Vector2 SpawnZone;
     [SerializeField] float SpawnTimer;
-     GameObject player;
+    GameObject player;
 
-    float timer;
+    private float timer;
     private void Start() {
         player = GameManager.instance.playerTransform.gameObject;
     }
@@ -24,9 +24,9 @@ public class EnemyManager : MonoBehaviour
     private void SpawnEnemy() {
         Vector3 position = GenerateRandomPostition();
             position += player.transform.position;
-            GameObject newEnemy = Instantiate(Enemy);
+            GameObject newEnemy = Instantiate(EnemyToSpawn);
             newEnemy.transform.position = position;
-            newEnemy.GetComponent<Enemy>().SetTarget(player);
+            // newEnemy.GetComponent<Enemy>().SetTarget(player);
             newEnemy.transform.parent = transform;
     }
     private Vector3 GenerateRandomPostition() {
