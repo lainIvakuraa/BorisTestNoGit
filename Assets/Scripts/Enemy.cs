@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,9 +9,9 @@ public class Enemy : MonoBehaviour
    GameObject targetGameObject;
    Charachter targetCharacter;
    [SerializeField] float speed;
-   [SerializeField] int damage = 1;
-   [SerializeField] int currentHP = 5;
-   [SerializeField] int experienceRewards = 400;
+   [SerializeField] int damage;
+   [SerializeField] int currentHP;
+   [SerializeField] int experienceRewards;
   
 
    Rigidbody2D rgbd2d;
@@ -47,5 +48,16 @@ public class Enemy : MonoBehaviour
           targetGameObject.GetComponent<Level>().AddExperience(experienceRewards);
             Destroy(gameObject);
         }
+    }
+    public void Haste(float timer)
+    {
+        speed = speed * 5f;
+        float timerToSlow = timer;
+        float currentTime = Time.time;
+
+    }
+    public void speedDown()
+    {
+
     }
 }
