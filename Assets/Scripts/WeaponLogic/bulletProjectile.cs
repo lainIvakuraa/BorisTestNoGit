@@ -9,9 +9,6 @@ public class bulletProjectile : MonoBehaviour
     public int damage = 5; // урон пули
      float Range = 6; // дальность пули
     bool hitDetected = false; // флаг попадания по противнику
-    
-    Enemy closetsEnemy; // переменная самого близкого врага
-
     Vector3 bulletDirection;
     Vector3 shotStart;
     
@@ -21,35 +18,11 @@ public class bulletProjectile : MonoBehaviour
     public void SetDamage(int settetDamage) {
         damage = settetDamage;
     }
-    public void SetDirection() { //выбор цели для пули
-        var NearEnemies = FindObjectsOfType<Enemy>();
-        if (NearEnemies == null) {
-            direction = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f));
-        } else {
-        
-        closetsEnemy = FindClosestEnemy(this.transform.position, NearEnemies);
-        
-        direction = closetsEnemy.transform.position;
-        }
-        
+    
+    public void SetDirection(Vector3 direction) { //выбор цели для пули
+        this.direction = direction;
     }
-    // поиск ближайшего врага
-    private Enemy FindClosestEnemy(Vector3 playerPosition, IEnumerable<Enemy> enemies) 
-    {
-        Enemy closestEnemy = null;
-        float closestDistance = Mathf.Infinity;
- 
-        foreach (Enemy enemy in enemies) {
-        float distance = Vector3.Distance(playerPosition, enemy.transform.position);
- 
-       if (distance < closestDistance)
-      {
-           closestEnemy = enemy;
-           closestDistance = distance;
-       }
-   }
-   return closestEnemy;
-}
+    
     private void Start() {
         bulletDirection = direction - this.transform.position;
         shotStart = this.transform.position;

@@ -16,12 +16,22 @@ public abstract class WeaponBase : MonoBehaviour
 
         }
     }
+    /*public void ApplyDamage(Collider2D[] colliders) {
+        int damage = GetDamage();
+        for (int i = 0; i < colliders.Length, i++) {
+            IDamageable e = colliders[i].GetComponent<IDamagable>();
+            if (e != null) {
+                PostDamage(damage, colliders[i].transform.position);
+                e.TakeDamage(damage);
+            }
+        }
+    }*/
 
     public virtual void SetData(WeaponData wd) {
         weaponData = wd;
         TimeToAttack = weaponData.stats.timeToAttack;
 
-        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack);
+        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.numberOfAttacks);
     }
     public abstract void Attack();
 

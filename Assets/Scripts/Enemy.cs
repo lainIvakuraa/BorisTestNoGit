@@ -16,7 +16,6 @@ public class Enemy : MonoBehaviour
    Rigidbody2D rgbd2d;
    void Start()
     {
-        //Set the tag of this GameObject to Player
         gameObject.tag = "Enemy";
     }
    private void Awake() {
@@ -29,6 +28,7 @@ public class Enemy : MonoBehaviour
    private void FixedUpdate() {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rgbd2d.velocity = direction * speed;
+        //Debug.Log(this.transform.position.normalized);
    }
    private void OnCollisionStay2D(Collision2D collision) {
      if (collision.gameObject == targetGameObject) {
