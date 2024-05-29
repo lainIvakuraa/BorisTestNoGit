@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] GameObject Enemy;
+    [SerializeField] GameObject Enemy2;
     [SerializeField] Vector2 SpawnZone;
     [SerializeField] float SpawnTimer;
      GameObject player;
@@ -28,7 +29,13 @@ public class EnemyManager : MonoBehaviour
             newEnemy.transform.position = position;
             newEnemy.GetComponent<Enemy>().SetTarget(player);
             newEnemy.transform.parent = transform;
-    }
+        Vector3 position2 = GenerateRandomPostition();
+            position2 += player.transform.position;
+            GameObject newEnemy2 = Instantiate(Enemy2);
+            newEnemy2.transform.position = position2;
+            newEnemy2.GetComponent<EnemyHaste>();
+            newEnemy2.transform.parent = transform;
+    }   
     private Vector3 GenerateRandomPostition() {
         Vector3 position = new Vector3();
         float f = UnityEngine.Random.value > 0.5f ? -1f : 1f;
