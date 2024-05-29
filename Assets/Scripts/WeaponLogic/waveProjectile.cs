@@ -9,11 +9,7 @@ public class WaveProjectile : MonoBehaviour
     [SerializeField] float speed; // скорость пули
     public int damage = 5; // урон пули
     [SerializeField] float Range = 10.0f; // длина лучей в обе стороны
-    
-
-    
     Enemy closetsEnemy; // переменная самого близкого врага
-
     Vector3 bulletDirection;
     Vector3 shotStart;
 
@@ -31,13 +27,9 @@ public class WaveProjectile : MonoBehaviour
                 0,
                 playerPos.transform.position.z);
 
-        lifeTime = 30;
+        lifeTime = 50;
 
-     }
-        
-
-    
-
+     }   
     private void Start() {
         bulletDirection = direction - this.transform.position;
         shotStart = this.transform.position;

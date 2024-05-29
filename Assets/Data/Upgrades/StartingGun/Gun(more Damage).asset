@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: MoreDamage
-  icon: {fileID: 21300000, guid: c2311f0b7f4c3ad4b8c5dd4cab2f1dad, type: 3}
+  icon: {fileID: 21300000, guid: 6c71626b67ba845479b2faa85056c1fc, type: 3}
   weaponData: {fileID: 11400000, guid: 48b61c772bf7eb1499503c3cc797a106, type: 2}
   weaponUpgradeStats:
     damage: 5
     timeToAttack: 0
+    numberOfAttacks: 0

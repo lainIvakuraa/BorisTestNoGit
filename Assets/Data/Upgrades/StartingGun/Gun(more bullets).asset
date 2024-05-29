@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51fa828618b5e804a812c5988137f525, type: 3}
-  m_Name: TestUpgrade3
+  m_Name: Gun(more bullets)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Owen
-  icon: {fileID: 21300000, guid: 9fc9001ce70931b4d9e3401eed13a399, type: 3}
-  weaponData: {fileID: 0}
+  Name: MoreBullets
+  icon: {fileID: 21300000, guid: 335a9e0d5d190394a9b6507664b829ab, type: 3}
+  weaponData: {fileID: 11400000, guid: 48b61c772bf7eb1499503c3cc797a106, type: 2}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    numberOfAttacks: 1
+    pierceCount: 0

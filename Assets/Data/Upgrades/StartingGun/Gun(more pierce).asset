@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51fa828618b5e804a812c5988137f525, type: 3}
-  m_Name: TestUpgrade2
+  m_Name: Gun(more pierce)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: Boomerang
-  icon: {fileID: 21300000, guid: 335a9e0d5d190394a9b6507664b829ab, type: 3}
-  weaponData: {fileID: 0}
+  Name: morePierce
+  icon: {fileID: 21300000, guid: 2f98889acf6dca04fb264da974054cda, type: 3}
+  weaponData: {fileID: 11400000, guid: 48b61c772bf7eb1499503c3cc797a106, type: 2}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    numberOfAttacks: 0
+    pierceCount: 1
