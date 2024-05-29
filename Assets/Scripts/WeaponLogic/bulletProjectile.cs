@@ -17,10 +17,13 @@ public class bulletProjectile : MonoBehaviour
         return damage;
     }
     public void SetDamage(int settetDamage) {
-        damage = settetDamage;
+        this.damage = settetDamage;
     }
     public void SetHitCount(int hitCount) {
         this.maxHitCount = hitCount;
+    }
+    public void SetRange(float Range) {
+        this.Range = Range;
     }
     
     public void SetDirection(Vector3 direction) { //выбор цели для пули
