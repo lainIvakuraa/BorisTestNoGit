@@ -7,8 +7,9 @@ public class bulletProjectile : MonoBehaviour
     Vector3 direction; // направление движения
     [SerializeField] float speed; // скорость пули
     public int damage = 5; // урон пули
-     float Range = 6; // дальность пули
-    bool hitDetected = false; // флаг попадания по противнику
+    float Range = 6; // дальность пули
+    int hitDetected = 0; // флаг попадания по противнику
+    int maxHitCount;
     Vector3 bulletDirection;
     Vector3 shotStart;
     
@@ -17,6 +18,9 @@ public class bulletProjectile : MonoBehaviour
     }
     public void SetDamage(int settetDamage) {
         damage = settetDamage;
+    }
+    public void SetHitCount(int hitCount) {
+        this.maxHitCount = hitCount;
     }
     
     public void SetDirection(Vector3 direction) { //выбор цели для пули
@@ -38,19 +42,19 @@ public class bulletProjectile : MonoBehaviour
         
     }
     void FixedUpdate() {
-        if (Time.frameCount % 2 == 0) {
+        //if (Time.frameCount % 2 == 0) {}
         Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.1f);
         foreach(Collider2D c in hit) {
             Enemy enemy = c.GetComponent<Enemy>();
             if (enemy != null) {
-                enemy.TakeDamage(damage);
-                hitDetected = true;
-                break;
+                    hitDetected += 1;
+                    enemy.TakeDamage(damage);
+                    Debug.Log(hitDetected);
+                    break;   
             }
         }
-        if (hitDetected == true) {
+        if (hitDetected >= maxHitCount) {
                 Destroy(gameObject);
             }
-        }
     }
 }

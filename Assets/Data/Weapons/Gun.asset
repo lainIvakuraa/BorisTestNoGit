@@ -16,8 +16,11 @@ MonoBehaviour:
   stats:
     damage: 5
     timeToAttack: 2
-    numberOfAttacks: 5
+    numberOfAttacks: 1
+    pierceCount: 1
   weaponBasePrefab: {fileID: 3859497967436598422, guid: bdd893a2bd805f040b34f7a2d3b57f0e, type: 3}
   upgrades:
   - {fileID: 11400000, guid: a8a688149f11da34cad1510507151d84, type: 2}
   - {fileID: 11400000, guid: 6fda5a1d6e7dd264f98e93bf443f1bb5, type: 2}
+  - {fileID: 11400000, guid: 0f1da5b8a4ec8a047a7282ae0909e60f, type: 2}
+  - {fileID: 11400000, guid: e6606d9d7df6480459355ce06f7a68c6, type: 2}

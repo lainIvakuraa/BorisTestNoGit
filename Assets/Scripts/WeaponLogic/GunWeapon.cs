@@ -55,6 +55,7 @@ public class GunWeapon : WeaponBase
                 bulletProjectile bulletProjectileCurrent = shotBullet.GetComponent<bulletProjectile>();
                 bulletProjectileCurrent.SetDirection(newBulltPosition); //FindObjectOfType<Charachter>().transform.position
                 bulletProjectileCurrent.damage = weaponStats.damage;
+                bulletProjectileCurrent.SetHitCount(weaponStats.pierceCount);
             }
         } else {
             GameObject shotBullet = Instantiate(bulletPrefab);
@@ -63,6 +64,7 @@ public class GunWeapon : WeaponBase
             bulletProjectile bulletProjectileCurrent = shotBullet.GetComponent<bulletProjectile>();
             bulletProjectileCurrent.SetDirection(bulletDirection); //FindObjectOfType<Charachter>().transform.position
             bulletProjectileCurrent.damage = weaponStats.damage;
+            bulletProjectileCurrent.SetHitCount(weaponStats.pierceCount);
         }
     }
     
