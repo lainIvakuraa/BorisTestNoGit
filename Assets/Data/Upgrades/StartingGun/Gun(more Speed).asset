@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 0
   Name: MoreSpeed
-  icon: {fileID: 21300000, guid: 335a9e0d5d190394a9b6507664b829ab, type: 3}
+  icon: {fileID: 21300000, guid: d1ac67e07cda7034b9e0a44d4d089d27, type: 3}
   weaponData: {fileID: 11400000, guid: 48b61c772bf7eb1499503c3cc797a106, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: -1.5
+    numberOfAttacks: 0

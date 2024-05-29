@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -8,15 +9,14 @@ public class Enemy : MonoBehaviour
    GameObject targetGameObject;
    Charachter targetCharacter;
    [SerializeField] float speed;
-   [SerializeField] int damage = 1;
-   [SerializeField] int currentHP = 5;
-   [SerializeField] int experienceRewards = 400;
+   [SerializeField] int damage;
+   [SerializeField] int currentHP;
+   [SerializeField] int experienceRewards;
   
 
    Rigidbody2D rgbd2d;
    void Start()
     {
-        //Set the tag of this GameObject to Player
         gameObject.tag = "Enemy";
     }
    private void Awake() {
@@ -29,6 +29,7 @@ public class Enemy : MonoBehaviour
    private void FixedUpdate() {
         Vector3 direction = (targetDestination.position - transform.position).normalized;
         rgbd2d.velocity = direction * speed;
+        //Debug.Log(this.transform.position.normalized);
    }
    private void OnCollisionStay2D(Collision2D collision) {
      if (collision.gameObject == targetGameObject) {
@@ -47,5 +48,16 @@ public class Enemy : MonoBehaviour
           targetGameObject.GetComponent<Level>().AddExperience(experienceRewards);
             Destroy(gameObject);
         }
+    }
+    public void Haste(float timer)
+    {
+        speed = speed * 5f;
+        float timerToSlow = timer;
+        float currentTime = Time.time;
+
+    }
+    public void speedDown()
+    {
+
     }
 }

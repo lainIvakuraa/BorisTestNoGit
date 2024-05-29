@@ -273,8 +273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1591128848425707306, guid: dd948b35434406f44aae1e2a0d4565f6, type: 3}
+  Enemy2: {fileID: 1591128848425707306, guid: 0b014779029bb77478103172a851b9a6, type: 3}
   SpawnZone: {x: 3, y: 2}
-  SpawnTimer: 3
+  SpawnTimer: 2
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

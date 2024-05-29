@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upgradeType: 2
   Name: GunUnlock
-  icon: {fileID: 21300000, guid: d1ac67e07cda7034b9e0a44d4d089d27, type: 3}
+  icon: {fileID: 21300000, guid: c074563ed3ff6104a991b414d9ba8e65, type: 3}
   weaponData: {fileID: 11400000, guid: 48b61c772bf7eb1499503c3cc797a106, type: 2}
+  weaponUpgradeStats:
+    damage: 0
+    timeToAttack: 0
+    numberOfAttacks: 0
