@@ -20,3 +20,9 @@ MonoBehaviour:
     damage: 5
     timeToAttack: 0
     numberOfAttacks: 0
+    pierceCount: 0
+    bulletRange: 0
+    bulletSpeed: 0
+  nextUpgrades:
+  - {fileID: 11400000, guid: 6fda5a1d6e7dd264f98e93bf443f1bb5, type: 2}
+  description: 

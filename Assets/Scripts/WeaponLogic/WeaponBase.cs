@@ -31,7 +31,7 @@ public abstract class WeaponBase : MonoBehaviour
         weaponData = wd;
         TimeToAttack = weaponData.stats.timeToAttack;
 
-        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.numberOfAttacks, wd.stats.pierceCount);
+        weaponStats = new WeaponStats(wd.stats.damage, wd.stats.timeToAttack, wd.stats.numberOfAttacks, wd.stats.pierceCount, wd.stats.bulletRange, wd.stats.bulletSpeed);
     }
     public abstract void Attack();
 

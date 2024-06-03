@@ -21,3 +21,8 @@ MonoBehaviour:
     timeToAttack: 0
     numberOfAttacks: 1
     pierceCount: 0
+    bulletRange: 0
+    bulletSpeed: 0
+  nextUpgrades:
+  - {fileID: 11400000, guid: e6606d9d7df6480459355ce06f7a68c6, type: 2}
+  description: 
