@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 693489065483920338}
   - component: {fileID: 5406909566572974908}
   - component: {fileID: 7490391451362398089}
-  - component: {fileID: 6125848848050322749}
+  - component: {fileID: 512362785299016872}
   m_Layer: 0
   m_Name: EnemyBat
   m_TagString: Enemy
@@ -181,7 +181,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6125848848050322749
+--- !u!114 &512362785299016872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,10 +190,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1591128848425707306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15a8ed33a19e2414eb146b6270b9a940, type: 3}
+  m_Script: {fileID: 11500000, guid: 98b8652dea3380043a0a6e109905ae41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  damage: 11
-  currentHP: 10
-  experienceRewards: 400
+  damage: 3
+  currentHP: 8
+  experienceRewards: 500

@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8541322014579918290}
   - component: {fileID: 5406909566572974908}
   - component: {fileID: 7490391451362398089}
-  - component: {fileID: -801834473287988409}
+  - component: {fileID: -6225969684599504487}
   m_Layer: 0
-  m_Name: EnemyHaste
+  m_Name: EnemyRange
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -934822952, guid: 185ce2851ed7eee4c84a33be2d86a298, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b9f42d0f55d37824b83a051578e927ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -123,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.49, y: 0.65}
+    oldSize: {x: 2.56, y: 2.56}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -159,7 +159,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &-801834473287988409
+--- !u!114 &-6225969684599504487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -168,12 +168,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1591128848425707306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d5ef33923d79cd42be4f605d164d22c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e966b6c2714e404099e084431e55e7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  damage: 2
-  currentHP: 10
+  damage: 5
+  currentHP: 50
   experienceRewards: 200
-  rangeHaste: 5
-  timerToHaste: 100
+  EnemyRangeBulletPrefab: {fileID: 8616768073530964394, guid: 002bc21a163e2ee46b4512dddb48a77b, type: 3}
+  timerToAttack: 3
+  Range: 8
+  RangeDamage: 100
+  distance: 3

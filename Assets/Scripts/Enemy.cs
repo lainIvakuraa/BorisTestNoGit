@@ -5,23 +5,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-     Transform targetDestination;
-   GameObject targetGameObject;
-   Charachter targetCharacter;
-   [SerializeField] float speed;
-   [SerializeField] int damage;
-   [SerializeField] int currentHP;
-   [SerializeField] int experienceRewards;
-  
+   protected Transform targetDestination;
+   protected GameObject targetGameObject;
+   protected Charachter targetCharacter;
+   [SerializeField] protected float speed;
+   [SerializeField] protected int damage;
+   [SerializeField] protected int currentHP;
+   [SerializeField] protected int experienceRewards;
 
-   Rigidbody2D rgbd2d;
-   void Start()
-    {
+   protected Rigidbody2D rgbd2d;
+
+   private void Awake() {
+        rgbd2d = GetComponent<Rigidbody2D>();
         gameObject.tag = "Enemy";
     }
-   private void Awake() {
-        rgbd2d = GetComponent<Rigidbody2D>();  
-   }
    public void SetTarget(GameObject Target) {
      targetGameObject = Target;
      targetDestination = Target.transform;
@@ -37,7 +34,7 @@ public class Enemy : MonoBehaviour
      }
    }
    private void Attack() {
-     if (targetCharacter == null) {
+        if (targetCharacter == null) { 
       targetCharacter = targetGameObject.GetComponent<Charachter>();
      }
      targetCharacter.TakeDamage(damage);

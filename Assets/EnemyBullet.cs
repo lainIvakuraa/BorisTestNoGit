@@ -1,35 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
-using UnityEditor.UIElements;
 using UnityEngine;
-// Ð»Ð¾Ð³Ð¸ÐºÐ° Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ñ Ð¿ÑƒÐ»Ð¸
-public class bulletProjectile : MonoBehaviour
+
+public class EnemyBullet : MonoBehaviour
 {
-    Vector3 direction; // Ð½Ð°Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ñ
-    [SerializeField] float speed; // ÑÐºÐ¾Ñ€Ð¾ÑÑ‚ÑŒ Ð¿ÑƒÐ»Ð¸
-    public int damage = 5; // ÑƒÑ€Ð¾Ð½ Ð¿ÑƒÐ»Ð¸
-    float Range = 6; // Ð´Ð°Ð»ÑŒÐ½Ð¾ÑÑ‚ÑŒ Ð¿ÑƒÐ»Ð¸
-    int hitDetected = 0; // Ñ„Ð»Ð°Ð³ Ð¿Ð¾Ð¿Ð°Ð´Ð°Ð½Ð¸Ñ Ð¿Ð¾ Ð¿Ñ€Ð¾Ñ‚Ð¸Ð²Ð½Ð¸ÐºÑƒ
-    int maxHitCount;
+    GameObject targetGameObject;
+
+    Vector3 direction; // íàïðàâëåíèå äâèæåíèÿ
+    [SerializeField] float speed; // ñêîðîñòü ïóëè
+    private int damage; // óðîí ïóëè
+    private float Range;
+    int hitDetected = 0; // ôëàã ïîïàäàíèÿ ïî ïðîòèâíèêó
     Vector3 bulletDirection;
     Vector3 shotStart;
 
-    public int GetDamage()
+
+    public void SetRange(float numeric)
     {
-        return damage;
+        Range = numeric;
     }
     public void SetDamage(int settetDamage)
     {
         damage = settetDamage;
     }
-    public void SetHitCount(int hitCount)
-    {
-        this.maxHitCount = hitCount;
-    }
 
     public void SetDirection(Vector3 direction)
-    { //Ð²Ñ‹Ð±Ð¾Ñ€ Ñ†ÐµÐ»Ð¸ Ð´Ð»Ñ Ð¿ÑƒÐ»Ð¸
+    { //âûáîð öåëè äëÿ ïóëè
         this.direction = direction;
     }
 
@@ -38,7 +34,7 @@ public class bulletProjectile : MonoBehaviour
         bulletDirection = direction - this.transform.position;
         shotStart = this.transform.position;
     }
-    // Ð´Ð²Ð¸Ð¶ÐµÐ½Ð¸Ðµ Ð¿ÑƒÐ»Ð¸ ÐºÐ°Ð¶Ð´Ñ‹Ð¹ ÐºÐ°Ð´Ñ€
+    // äâèæåíèå ïóëè êàæäûé êàäð
     void Update()
     {
         transform.right = direction;
@@ -46,27 +42,29 @@ public class bulletProjectile : MonoBehaviour
 
         if (Vector3.Distance(shotStart, transform.position) > Range)
         {
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAa");
             Destroy(gameObject);
         }
 
     }
     void FixedUpdate()
     {
+
         //if (Time.frameCount % 2 == 0) {}
         Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.1f);
         foreach (Collider2D collider in hit)
         {
             //string TagObject = collider.GetComponent<TagAttribute>();
-            Enemy enemy = collider.GetComponent<Enemy>();
-            if (enemy != null)
+            Charachter chara = collider.GetComponent<Charachter>();
+            if (chara != null)
             {
                 hitDetected += 1;
-                enemy.TakeDamage(damage);
-                Debug.Log(hitDetected);
+                chara.TakeDamage(damage);
+                Debug.Log("Ïîëó÷àé, ïèäîð" + damage);
                 break;
             }
         }
-        if (hitDetected >= maxHitCount)
+        if (hitDetected >= 1)
         {
             Destroy(gameObject);
         }
