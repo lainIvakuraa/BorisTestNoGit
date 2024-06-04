@@ -7,8 +7,10 @@ public class bulletProjectile : MonoBehaviour
     Vector3 direction; // направление движения
     [SerializeField] float speed; // скорость пули
     public int damage = 5; // урон пули
-     float Range = 6; // дальность пули
-    bool hitDetected = false; // флаг попадания по противнику
+    float Range = 6; // дальность пули
+    int numOfHits = 0; // флаг попадания по противнику
+    int maxHitCount;
+    List<Enemy> hittedEnemies;
     Vector3 bulletDirection;
     Vector3 shotStart;
     
@@ -16,7 +18,13 @@ public class bulletProjectile : MonoBehaviour
         return damage;
     }
     public void SetDamage(int settetDamage) {
-        damage = settetDamage;
+        this.damage = settetDamage;
+    }
+    public void SetHitCount(int hitCount) {
+        this.numOfHits = hitCount;
+    }
+    public void SetRange(float Range) {
+        this.Range = Range;
     }
     
     public void SetDirection(Vector3 direction) { //выбор цели для пули
@@ -38,19 +46,33 @@ public class bulletProjectile : MonoBehaviour
         
     }
     void FixedUpdate() {
-        if (Time.frameCount % 2 == 0) {
+        if (Time.frameCount % 2 == 0) {}
         Collider2D[] hit = Physics2D.OverlapCircleAll(transform.position, 0.1f);
         foreach(Collider2D c in hit) {
+            if (numOfHits >= 0) {
             Enemy enemy = c.GetComponent<Enemy>();
             if (enemy != null) {
-                enemy.TakeDamage(damage);
-                hitDetected = true;
+                if (CheckRepeatHit(enemy) == false) {
+                if (enemy != null) {
+                    numOfHits -= 1;
+                    enemy.TakeDamage(damage);
+                    hittedEnemies.Add(enemy);
+                    Debug.Log(numOfHits);
+                    break;   
+            }
+            }
+            }
+            
+            } else {
                 break;
             }
         }
-        if (hitDetected == true) {
+        if (numOfHits < 0) {
                 Destroy(gameObject);
             }
-        }
     }
+    private bool CheckRepeatHit(Enemy enemy) {
+        if (hittedEnemies == null) {hittedEnemies = new List<Enemy>();}
+        return hittedEnemies.Contains(enemy);
+    } 
 }

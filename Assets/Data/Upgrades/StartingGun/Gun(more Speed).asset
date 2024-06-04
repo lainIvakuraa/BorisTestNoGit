@@ -13,10 +13,19 @@ MonoBehaviour:
   m_Name: Gun(more Speed)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: MoreSpeed
+  Name: "\u0423\u0441\u0438\u043B\u0435\u043D\u043D\u044B\u0439 \u043C\u043E\u0442\u043E\u0440"
   icon: {fileID: 21300000, guid: d1ac67e07cda7034b9e0a44d4d089d27, type: 3}
   weaponData: {fileID: 11400000, guid: 48b61c772bf7eb1499503c3cc797a106, type: 2}
   weaponUpgradeStats:
     damage: 0
     timeToAttack: -1.5
     numberOfAttacks: 0
+    pierceCount: 0
+    bulletRange: 0
+    bulletSpeed: 0
+    lifeTime: 0
+  nextUpgrades:
+  - {fileID: 11400000, guid: 96664397fc09bc34a87e18eeb9f1abe3, type: 2}
+  description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+    \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u043C\u0435\u0442\u0430\u043D\u0438\u044F
+    \u0433\u0432\u043E\u0437\u0434\u0435\u0439"

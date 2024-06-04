@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class ElectricField : WeaponBase
 {
-    [SerializeField] float attack;
+    [SerializeField] float attackAreaSize = 3f;
     public override void Attack() {
-
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackAreaSize);
+        
     }
 }

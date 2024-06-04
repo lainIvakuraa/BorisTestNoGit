@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51fa828618b5e804a812c5988137f525, type: 3}
+  m_Name: MCDamageUp
+  m_EditorClassIdentifier: 
+  upgradeType: 0
+  Name: "\u0423\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0438\u0435 \u0440\u0430\u0434\u0438\u0430\u0446\u0438\u0438"
+  icon: {fileID: 21300000, guid: dad82ff78c13ccb40b78321286e752a3, type: 3}
+  weaponData: {fileID: 11400000, guid: b1e46fd686d945d4f907e47305f03cc5, type: 2}
+  weaponUpgradeStats:
+    damage: 5
+    timeToAttack: 0
+    numberOfAttacks: 0
+    pierceCount: 0
+    bulletRange: 0
+    bulletSpeed: 0
+    lifeTime: 0
+  nextUpgrades:
+  - {fileID: 11400000, guid: dbc7e233824c9db45a000afe53c3478c, type: 2}
+  description: "\u0423\u0440\u043E\u043D \u043C\u0438\u043A\u0440\u043E\u0432\u043E\u043B\u043D
+    +5"

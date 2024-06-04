@@ -13,10 +13,19 @@ MonoBehaviour:
   m_Name: Gun(more Damage)
   m_EditorClassIdentifier: 
   upgradeType: 0
-  Name: MoreDamage
+  Name: "\u0417\u0430\u0442\u043E\u0447\u0435\u043D\u043D\u044B\u0435 \u043A\u043E\u043D\u0446\u044B"
   icon: {fileID: 21300000, guid: 6c71626b67ba845479b2faa85056c1fc, type: 3}
   weaponData: {fileID: 11400000, guid: 48b61c772bf7eb1499503c3cc797a106, type: 2}
   weaponUpgradeStats:
     damage: 5
     timeToAttack: 0
     numberOfAttacks: 0
+    pierceCount: 0
+    bulletRange: 0
+    bulletSpeed: 0
+    lifeTime: 0
+  nextUpgrades:
+  - {fileID: 11400000, guid: 6fda5a1d6e7dd264f98e93bf443f1bb5, type: 2}
+  description: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
+    \u0443\u0440\u043E\u043D \u0433\u0432\u043E\u0437\u0434\u0435\u0439 \u043D\u0430
+    5"

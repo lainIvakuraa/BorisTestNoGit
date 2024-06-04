@@ -10,8 +10,11 @@ public class McwaveWeapon : WeaponBase
         GameObject shotBullet = Instantiate(bulletPrefab);
         shotBullet.transform.position = transform.position;
         WaveProjectile bulletProjectileCurrent = shotBullet.GetComponent<WaveProjectile>();
-        bulletProjectileCurrent.SetDirection(); //FindObjectOfType<Charachter>().transform.position
+        bulletProjectileCurrent.SpawnProjectile();
         bulletProjectileCurrent.damage = weaponStats.damage;
+        bulletProjectileCurrent.SetLifetime(weaponStats.lifeTime);
+        bulletProjectileCurrent.SetBulletRange(weaponStats.bulletRange);
+    }
     }
     
-}
+

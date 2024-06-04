@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: Microwave
   m_EditorClassIdentifier: 
   Name: Microwave
+  description: Shots laser on both side of player
   stats:
-    damage: 10
+    damage: 3
     timeToAttack: 3
+    numberOfAttacks: 0
+    pierceCount: 0
+    bulletRange: 10
+    bulletSpeed: 0
+    lifeTime: 50
   weaponBasePrefab: {fileID: 3859497967436598422, guid: 762dc49797a4a994e865a227c10097e9, type: 3}
   upgrades:
-  - {fileID: 11400000, guid: a8a688149f11da34cad1510507151d84, type: 2}
-  - {fileID: 11400000, guid: 6fda5a1d6e7dd264f98e93bf443f1bb5, type: 2}
+  - {fileID: 11400000, guid: dbc7e233824c9db45a000afe53c3478c, type: 2}

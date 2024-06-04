@@ -38,4 +38,7 @@ public class Charachter : MonoBehaviour
             currentHP = maxHP;
         }
     }
+    public void MaxHpIncrease(int amount) {
+        this.maxHP += amount;
+    }
 }
