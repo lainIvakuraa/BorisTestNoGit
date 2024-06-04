@@ -20,3 +20,8 @@ MonoBehaviour:
     damage: 0
     timeToAttack: 0
     numberOfAttacks: 0
+    pierceCount: 0
+    bulletRange: 0
+    bulletSpeed: 0
+  nextUpgrades: []
+  description: 

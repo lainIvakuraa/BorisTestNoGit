@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Enemy: {fileID: 1591128848425707306, guid: dd948b35434406f44aae1e2a0d4565f6, type: 3}
+  Enemy2: {fileID: 0}
   SpawnZone: {x: 3, y: 2}
   SpawnTimer: 3
 --- !u!1 &619394800
@@ -647,7 +648,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1201960077
 Transform:
   m_ObjectHideFlags: 0
